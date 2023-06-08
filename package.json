@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/VitorAlenkart/blog/issues"
   },
-  "homepage": "https://github.com/VitorAlenkart/blog#readme"
+  "homepage": "https://github.com/VitorAlenkart/blog#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mysql2": "^3.3.3",
+    "sequelize": "^6.32.0"
+  }
 }
