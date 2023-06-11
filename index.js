@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // Rotes
 app.get('/', (req,res) => {
-    res.send('Opa!')
+    res.render('index');
 })
 
 
