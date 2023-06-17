@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const connection = require('./database/connection');
+
+const CategoriesController = require('./categories/CategoriesController');
 
 
 // View Engine
@@ -15,11 +18,19 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+// Set database
+    connection
+        .authenticate()
+        .then(() => {
+            console.log('Connection with the database sucessfully!')
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+
 
 // Rotes
-app.get('/', (req,res) => {
-    res.render('index');
-})
+app.use('/', CategoriesController);
 
 
 // Server
