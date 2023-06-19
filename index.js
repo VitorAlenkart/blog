@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const connection = require('./database/connection');
 
 const CategoriesController = require('./categories/CategoriesController');
+const ArticlesController = require('./articles/ArticlesController');
 
 
 // View Engine
@@ -31,6 +32,7 @@ app.use(bodyParser.json());
 
 // Rotes
 app.use('/', CategoriesController);
+app.use('/', ArticlesController);
 
 
 // Server

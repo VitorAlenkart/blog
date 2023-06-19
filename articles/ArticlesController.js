@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/category', (req,res) => {
+router.get('/article', (req,res) => {
     res.send('ola')
 })
 
