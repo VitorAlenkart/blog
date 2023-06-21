@@ -6,6 +6,9 @@ const connection = require('./database/connection');
 const CategoriesController = require('./categories/CategoriesController');
 const ArticlesController = require('./articles/ArticlesController');
 
+const Article = require('./articles/Article');
+const Category = require('./categories/Category');
+
 
 // View Engine
 app.set('view engine','ejs');
@@ -33,6 +36,10 @@ app.use(bodyParser.json());
 // Rotes
 app.use('/', CategoriesController);
 app.use('/', ArticlesController);
+
+app.get('/', (req,res) => {
+    res.render("index.ejs")
+})
 
 
 // Server
